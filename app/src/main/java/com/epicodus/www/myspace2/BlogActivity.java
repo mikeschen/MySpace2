@@ -13,6 +13,9 @@ public class BlogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog);
+        TextView txt = (TextView) findViewById(R.id.blogTextView);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Chantelli_Antiqua.ttf");
+        txt.setTypeface(font);
         mBlogTextView = (TextView) findViewById(R.id.blogTextView);
         Intent intent = getIntent();
         String blog = intent.getStringExtra("blog");
