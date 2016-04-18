@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = MainActivity.class.getSimpleName();
     private Button mBlogButton;
     private EditText mBlogEditText;
 
@@ -21,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TextView txt = (TextView) findViewById(R.id.textView2);
+        Typeface font = Typeface.createFromAsset(getAssets(), "Chantelli_Antiqua.ttf");
+        txt.setTypeface(font);
         mBlogEditText = (EditText) findViewById(R.id.blogEditText);
         mBlogButton = (Button) findViewById(R.id.blogButton);
         mBlogButton.setOnClickListener(new View.OnClickListener(){
@@ -32,8 +34,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        TextView textViewCustom = (TextView) findViewById(R.id.textViewCustomFont);
-//        Typeface myCustomFont = Typeface.createFromAsset(getAssets(), "fonts/Carnetdevoyage.ttf");
-//        textViewCustom.setTypeface(myCustomFont);
     }
 }
